@@ -1,0 +1,10 @@
+{
+  "include": ["src/**/*", "src/**/*.ts", "src/**/*.tsx"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
