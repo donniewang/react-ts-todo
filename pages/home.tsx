@@ -1,13 +1,20 @@
 import * as React from 'react';
 
-import * as todoStore from './stores/todo';
+import ToDoStore from '../stores/todo';
 
 import Button from '@mui/material/Button';
 
 import { observer } from 'mobx-react';
 
 export default observer(() => {
-  const [todo] = React.useState(() => todoStore());
+  const [todoStore] = React.useState(() => ToDoStore());
 
-  return <div>Home</div>;
+  return (
+    <div>
+      <div>Home{todoStore.todos.length}</div>
+      <div>
+        <Button variant="contained">Add</Button>
+      </div>
+    </div>
+  );
 });
