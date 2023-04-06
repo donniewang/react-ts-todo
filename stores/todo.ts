@@ -9,7 +9,6 @@ function ToDoStore() {
       localStorage.setItem('TODO', todoData);
       console.log('saveToDo', this.todos);
     },
-
     loadToDo() {
       const todoData = localStorage.getItem('TODO');
       if (!!todoData) {
@@ -17,14 +16,12 @@ function ToDoStore() {
       }
       console.log('loadToDo', this.todos);
     },
-
     addToDo(todo) {
       console.log('addToDo', todo, this.todos);
       this.todos.push(todo);
       console.log('after addToDo', todo, this.todos);
       this.saveToDo();
     },
-
     modifyToDo(todo) {
       console.log('modifyToDo', todo);
       const index = this.todos.findIndex((item) => item['id'] === todo['id']);
@@ -34,7 +31,6 @@ function ToDoStore() {
       }
       this.saveToDo();
     },
-
     removeToDo(todo) {
       console.log('removeToDo', todo);
       const index = this.todos.findIndex((item) => item['id'] === todo['id']);
@@ -43,7 +39,6 @@ function ToDoStore() {
       }
       this.saveToDo();
     },
-
     completeToDo(todo) {
       console.log('completeToDo', todo);
       const index = this.todos.findIndex((item) => item['id'] === todo['id']);
