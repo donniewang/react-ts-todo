@@ -9,17 +9,7 @@ import { autorun } from 'mobx';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import {
-  Button,
-  Confirm,
-  Container,
-  Grid,
-  Header,
-  Icon,
-  Input,
-  Modal,
-  Segment,
-} from 'semantic-ui-react';
+import { Button, Grid, Header, Input, Modal } from 'semantic-ui-react';
 
 export default observer((props) => {
   const [todoStore] = useState(() => ToDoStore());
@@ -114,7 +104,8 @@ export default observer((props) => {
         </Grid.Row>
         <Grid.Row textAlign="center" verticalAlign="middle" columns={2}>
           <Grid.Column textAlign="left">
-            count : {todoStore.todos.length}
+            count : {todoStore.todos.length} | complete : {todoStore.complete} |
+            uncomplete : {todoStore.uncomplete}
           </Grid.Column>
           <Grid.Column textAlign="right">
             <Button primary onClick={showAddDialog}>
@@ -127,7 +118,7 @@ export default observer((props) => {
         <Grid.Row columns={5} color="grey">
           <Grid.Column width={2}>title</Grid.Column>
           <Grid.Column width={3}>content</Grid.Column>
-          <Grid.Column width={2}>finishTime</Grid.Column>
+          <Grid.Column width={2}>finish time</Grid.Column>
           <Grid.Column width={3}>status</Grid.Column>
           <Grid.Column width={4}></Grid.Column>
         </Grid.Row>

@@ -4,6 +4,14 @@ function ToDoStore() {
   return makeAutoObservable({
     todos: [],
 
+    get complete() {
+      return this.todos.filter((item) => item['status'] == 2).length;
+    },
+
+    get uncomplete() {
+      return this.todos.filter((item) => item['status'] != 2).length;
+    },
+
     saveToDo() {
       const todoData = JSON.stringify(this.todos);
       localStorage.setItem('TODO', todoData);
